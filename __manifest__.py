@@ -12,7 +12,9 @@
     'category': 'Custom Modules/Cooperative',
     'version': '0.1',
     'depends':  ['base'],
-    'demo':  [''],
     'data':  [''],
+    'demo':  [
+               'demo/task_demo.xml',
+               ],
     'application': True,
 }
