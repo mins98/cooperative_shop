@@ -12,7 +12,7 @@
         <record id="task_02" model="cooperative_shop.task">
             <field name="name">Planting</field>
             <field name="start_time">2022-07-01 11:30:00</field>
-            <field name="stop_time">2023-07-03</field>
+            <field name="stop_time">2023-07-03 14:15:00</field>
             <field name="ocurrences">5</field>
             <field name="description">Reforestation campaign in areas consumed by fires</field>
             <field name="task_type">preservation</field>
@@ -21,11 +21,11 @@
             <field name="name">Money Collection</field>
             <field name="start_time">2022-12-20 17:00:00</field>
             <field name="stop_time">2022-12-25 23:00:00</field>
-            <field name="ocurrences">Collection of Christmas donations for low-income people</field>
-            <field name="description">0</field>
+            <field name="ocurrences">0</field>
+            <field name="description">Collection of Christmas donations for low-income people</field>
             <field name="task_type">collection</field>
         </record>
     </data>
-    
+  
 
 </odoo>
