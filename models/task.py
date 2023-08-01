@@ -23,15 +23,15 @@ class Task(models.Model):
                                ('in_progress','In progress'),
                                ('done','Done'),
                            ], copy=False,default="draft")
-    leader=fields.Char(string="Leader of task")
-    active = fields.Boolean(string="active", default=True)
     
+    leader_id=fields.Many2one(comodel_name="res.users", string="Leader of task",ondelete='restrict')
+    active = fields.Boolean(string="active", default=True)
     volunteers_ids = fields.Many2many(comodel_name="res.partner", string="Volunteers in this task")
     
-    @api.onchange('leader')
+    @api.onchange('leader_id')
     def _on_change_leader(self):
         for task in self:
-            if task.leader and task.state=="draft":
+            if task.leader_id and task.state=="draft":
                 task.state ='ready'
-            elif task.state!="draft" and task.leader=="":
+            elif task.state!="draft" and task.leader_id=="":
                 task.state ='draft' 

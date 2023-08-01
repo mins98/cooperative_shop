@@ -4,7 +4,7 @@
     <record id="task_list_action" model="ir.actions.act_window">
         <field name="name">Task List</field>
         <field name="res_model">cooperative_shop.task</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,calendar,gantt,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face" >
                 Create the first Course
