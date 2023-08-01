@@ -16,7 +16,8 @@
         'security/cooperative_groups.xml',
         'security/ir.model.access.csv',
         'security/cooperative_security.xml',
-        'views/cooperative_menuitems.xml'
+        'views/cooperative_menuitems.xml',
+        'views/task_views.xml'
         ],
     'demo':  [
                'demo/task_demo.xml',

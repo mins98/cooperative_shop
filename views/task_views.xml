@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="task_view_form" model="ir.ui.view">
+        <field name="name">task.view.form</field>
+        <field name="model">cooperative_shop.task</field>
+        <field name="arch" type="xml">
+            <form string="Tasks Views">
+                <header></header>
+                <sheet>
+                    <h1><field name="name"></field></h1>
+                    <group>
+                        <group>
+                            <field name="start_time"></field>
+                            <field name="stop_time"></field>
+                        </group>
+                        <group>
+                            <field name="ocurrences"></field>
+                            <field name="task_type"></field>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="task_view_tree" model="ir.ui.view">
+        <field name="name">task.view.tree</field>
+        <field name="model">cooperative_shop.task</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="start_time"/>
+                <field name="stop_time"/>
+                <field name="task_type"/>
+                <field name="ocurrences"/>
+            </tree>
+        </field>
+    </record>
+    <record id="task_view_search" model="ir.ui.view">
+        <field name="name">task.view.search</field>
+        <field name="model">cooperative_shop.task</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="name"/>
+                <field name="description"/>
+                <group expand="0" string="Filters">
+                    <filter name="filter_task_type" string="Charity" domain="[('task_type', '=', 'charity')]"/>
+                </group>
+                <filter name="gruop_by_task_type" string="Task Type" context="{'group_by':'task_type'}"/>
+                <filter name="start_time" string="Start Time" context="{'group_by':'start_time'}"/>
+                <filter name="stop_time" string="Stop Time" context="{'group_by':'stop_time'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>
