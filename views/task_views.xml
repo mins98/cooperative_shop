@@ -18,6 +18,12 @@
                             <field name="task_type"></field>
                         </group>
                     </group>
+                    <group>
+                        <group>
+                            <field name="state" ></field>
+                            <field name="leader"></field>
+                        </group>
+                    </group>
                     <notebook>
                         <page string="Description">
                             <field name="description"/>
@@ -36,6 +42,7 @@
                 <field name="start_time"/>
                 <field name="stop_time"/>
                 <field name="task_type"/>
+                <field name="state"/>
                 <field name="ocurrences"/>
             </tree>
         </field>
