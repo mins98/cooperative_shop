@@ -48,11 +48,14 @@
                 <field name="name"/>
                 <field name="description"/>
                 <group expand="0" string="Filters">
-                    <filter name="filter_task_type" string="Charity" domain="[('task_type', '=', 'charity')]"/>
+                    <filter name="start_time_today" string="Start today" domain="[('start_time','=',current_date)]" />
+                    <filter name="stop_time_today" string="Finish today" domain = "[('stop_time','=',current_date)]"/>
+                    <filter name="next_start" string="Next start dates" domain="[('start_time','&gt;=',current_date)]" />
+                    <filter name="next_finish" string="Next finish dates" domain = "[('stop_time','&gt;=',current_date)]"/>
+                
                 </group>
-                <filter name="gruop_by_task_type" string="Task Type" context="{'group_by':'task_type'}"/>
-                <filter name="start_time" string="Start Time" context="{'group_by':'start_time'}"/>
-                <filter name="stop_time" string="Stop Time" context="{'group_by':'stop_time'}"/>
+                
+                <filter name="gruop_by_task_type" string="Task Type" context="{'group_by':'task_type'}"/>     
             </search>
         </field>
     </record>

@@ -9,7 +9,7 @@ class Task(models.Model):
     stop_time=fields.Datetime(string="Finish date" )
     ocurrences=fields.Integer(string="Number of ocurrences")
     description=fields.Text(string="Description")
-    task_type=fields.Char(string="Task Type",
+    task_type=fields.Selection(string="Task Type",
                            selection=[
                                ('charity','Charity'),
                                ('aid','Humanitarian aid'),
