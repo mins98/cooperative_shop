@@ -28,6 +28,9 @@
                         <page string="Description">
                             <field name="description"/>
                         </page>
+                        <page  string="Volunteers">
+                            <field name="volunteers_ids"></field>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

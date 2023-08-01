@@ -16,21 +16,22 @@ class Task(models.Model):
                                ('collection','Donation collection'),
                                ('preservation','Wilderness preservation'),
                            ], copy=False)
-    state=fields.Selection(string="Task Type", default="draft",
+    state=fields.Selection(string="Task Type",
                            selection=[
                                ('draft','Draft'),
                                ('ready','Ready'),
                                ('in_progress','In progress'),
                                ('done','Done'),
-                           ], copy=False)
+                           ], copy=False,default="draft")
     leader=fields.Char(string="Leader of task")
     active = fields.Boolean(string="active", default=True)
     
+    volunteers_ids = fields.Many2many(comodel_name="res.partner", string="Volunteers in this task")
     
     @api.onchange('leader')
     def _on_change_leader(self):
         for task in self:
-            if task.leader!="" and task.state=="draft":
+            if task.leader and task.state=="draft":
                 task.state ='ready'
             elif task.state!="draft" and task.leader=="":
                 task.state ='draft' 
