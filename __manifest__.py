@@ -19,6 +19,7 @@
         'views/cooperative_menuitems.xml',
         'views/task_views.xml',
         'views/hr_expense_views_inherit.xml',
+        'wizard/task_wizard_view.xml',
         ],
     'demo':  [
                'demo/task_demo.xml',

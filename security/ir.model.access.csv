@@ -1,3 +1,6 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 cooperative_admin,cooperative admin,model_cooperative_shop_task,group_cooperative_admin,1,1,1,1
 cooperative_user,volunteer,model_cooperative_shop_task,group_cooperative_user,1,0,1,0
+
+task_wizard_admin,cooperative admin,model_cooperative_shop_task_wizard,group_cooperative_admin,1,1,1,1
+task_wizard_user,volunteer,model_cooperative_shop_task_wizard,group_cooperative_user,1,0,1,0

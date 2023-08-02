@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record model="ir.ui.view" id="cooperative_shop_task_wizard_form_view">
+            <field name="name">base.view_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form string="Add volunter to tasks">
+                    <group>
+                        <field name="task_ids"></field>
+                    </group>
+                    <footer>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+
+        </record>
+        <act_window id="lauch_task_wizard"
+                    name="Add tasks"
+                    binding_model="res.partner"
+                    res_model="cooperative_shop.task.wizard"
+                    view_mode="form"
+                    target="new"/>
+    </data>
+    
+</odoo>
