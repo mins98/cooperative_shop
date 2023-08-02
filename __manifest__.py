@@ -11,13 +11,14 @@
     'website':'www.odoo.com',
     'category': 'Custom Modules/Cooperative',
     'version': '0.1',
-    'depends':  ['base'],
+    'depends':  ['hr_expense'],
     'data':  [
         'security/cooperative_groups.xml',
         'security/ir.model.access.csv',
         'security/cooperative_security.xml',
         'views/cooperative_menuitems.xml',
-        'views/task_views.xml'
+        'views/task_views.xml',
+        'views/hr_expense_views_inherit.xml',
         ],
     'demo':  [
                'demo/task_demo.xml',

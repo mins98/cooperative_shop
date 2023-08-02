@@ -31,6 +31,9 @@
                         <page  string="Volunteers">
                             <field name="volunteers_ids"></field>
                         </page>
+                        <page string="Expences">
+                                <field name="expense_ids"/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
