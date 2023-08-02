@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report id="report_task"
+    model="cooperative_shop.task"
+    string="Task Report"
+    name="cooperative_shop.report_task_document"
+    file="cooperative_shop.report_task"
+    report_type="qweb-html"/>
+
+    <template id="report_task_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.name" class="mt16"/>
+                        <div class="row mt32 mb32" id="session_info">
+                            <h5>Basic info</h5>
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>Leader:</strong>
+                                <t t-if="doc.leader_id">
+                                    <span t-field="doc.leader_id.name"/>
+                                </t>
+                            </div>
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>Task days duration:</strong>
+                                <t t-if="doc.start_time">
+                                    <span t-field="doc.start_time"/>
+                                </t>
+                                to 
+                                <t t-if="doc.stop_time">
+                                    <span t-field="doc.stop_time"/>
+                                </t> 
+                            </div>
+                        </div>
+                        <div class="row mt32 mb32" id="session_info">
+                            <h5>Other info</h5>
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>Type:</strong>
+                                <t t-if="doc.task_type">
+                                    <span t-field="doc.task_type"/>
+                                </t>
+                            </div>
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>State:</strong>
+                                <t t-if="doc.state">
+                                    <span t-field="doc.state"/>
+                                </t>
+                            </div>
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>Number of ocurrences:</strong>
+                                <t t-if="doc.ocurrences">
+                                    <span t-field="doc.ocurrences"/>
+                                </t>
+                            </div>
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>Description:</strong>
+                                <t t-if="doc.description">
+                                    <span t-field="doc.description"/>
+                                </t>
+                            </div>
+                        </div>
+                        <h4>Volunteers</h4>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th name="th_name">Name</th>
+                                    <th name="th_phone">Phone</th> 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.volunteers_ids" t-as="volunter">
+                                    <tr>
+                                        <td t-if="volunter.name" name="td_name">
+                                            <span t-field="volunter.name"/>
+                                        </td>
+                                        <td t-if="volunter.phone" name="td_phone">
+                                            <span t-field="volunter.phone"/>
+                                        </td>                                   
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table> 
+                        <h4>Expenses</h4>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th name="th_name">Name</th> 
+                                    <th name="th_employe">Author</th>
+                                    <th name="th_state">State</th> 
+                                    <th name="th_total_amount_company">Amout</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.expense_ids" t-as="expense">
+                                    <tr>
+                                        <td t-if="expense.name" name="th_name">
+                                            <span t-field="expense.name"/>
+                                        </td>  
+                                        <td t-if="expense.employee_id" name="th_employe">
+                                            <span t-field="expense.employee_id"/>
+                                        </td>
+                                        <td t-if="expense.state" name="th_state">
+                                            <span t-field="expense.state"/>
+                                        </td>  
+                                        <td t-if="expense.total_amount_company" name="th_total_amount_company">
+                                            <span t-field="expense.total_amount_company"/>
+                                        </td>
+                                                                        
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table> 
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report id="report_volunteer"
+    model="res.partner"
+    string="Volunteer Report"
+    name="cooperative_shop.report_volunteer_document"
+    file="cooperative_shop.report_volunteer"
+    report_type="qweb-html"/>
+
+    <template id="report_volunteer_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.name" class="mt16"/>
+                        <div class="row mt32 mb32" id="session_info">
+                            <h5>Basic info</h5>
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>Email:</strong>
+                                <t t-if="doc.email">
+                                    <span t-field="doc.email"/>
+                                </t>
+                            </div>
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>Phone:</strong>
+                                <t t-if="doc.phone">
+                                    <span t-field="doc.phone"/>
+                                </t>
+                            </div>
+                        </div>
+                        <h4>Tasks</h4>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th name="th_name">Task</th> 
+                                             
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.task_ids" t-as="task">
+                                    <tr>
+                                        <td t-if="task.name" name="th_name">
+                                            <span t-field="task.name"/>
+                                        </td>  
+                                                           
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table> 
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

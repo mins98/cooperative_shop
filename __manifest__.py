@@ -20,6 +20,9 @@
         'views/task_views.xml',
         'views/hr_expense_views_inherit.xml',
         'wizard/task_wizard_view.xml',
+        'report/task_report_template.xml',
+        'report/volunteer_report_template.xml',
+        
         ],
     'demo':  [
                'demo/task_demo.xml',
