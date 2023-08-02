@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="volunteers_website">
+            <t t-call="website.layout">
+                <t t-set="title">Cooperative</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h1>Volunteers</h1>
+                        <t t-foreach="partners" t-as="partner">
+                            <t t-if="partner.tasks_ids">
+                                <div>
+                                    <h3>
+                                        <t t-esc="partner.name"/>
+                                    </h3>
+                                    <t t-if="partner.phone">
+                                        <p>Phone:
+                                            <span t-field="partner.phone"/>
+                                        </p>
+                                    </t>
+                                    <t t-if="partner.email">
+                                        <p>Email:
+                                            <span t-field="partner.email"/>
+                                        </p>
+                                    </t>
+                                    <strong>Tasks:</strong>
+                                    <t t-foreach="partner.tasks_ids" t-as="task">
+                                        <p>
+                                            <ul>
+                                                <a t-attf-href="/cooperative/{{ slug(task)}}">
+                                                    <li> <t t-esc="task.name"/></li>
+                                                </a>
+                                            </ul>  
+                                        </p>
+                                    </t>
+                                </div>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+    
+        <template id="task_website">
+            <t t-call="website.layout">
+                <t t-set="title">Task</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h3 t-field="task.name"></h3>
+                        <p>Description:
+                            <t t-esc="task.description"/>
+                        </p>
+                        <p>Leader:
+                            <t t-esc="task.leader_id.name"/>
+                        </p>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+  
+</odoo>

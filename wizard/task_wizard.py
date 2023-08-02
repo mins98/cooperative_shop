@@ -7,4 +7,4 @@ class TaskWizard(models.TransientModel):
     def _default_partner(self):
         return self.env['res.partner'].browse(self._context.get('active_id'))
 
-    task_ids = fields.Many2many(comodel_name="cooperative_shop.task", string="Volunteers in this task")
+    tasks_ids = fields.Many2many(comodel_name="cooperative_shop.task", string="Volunteers in this task")

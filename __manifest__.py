@@ -11,7 +11,7 @@
     'website':'www.odoo.com',
     'category': 'Custom Modules/Cooperative',
     'version': '0.1',
-    'depends':  ['hr_expense'],
+    'depends':  ['hr_expense','website'],
     'data':  [
         'security/cooperative_groups.xml',
         'security/ir.model.access.csv',
@@ -22,6 +22,8 @@
         'wizard/task_wizard_view.xml',
         'report/task_report_template.xml',
         'report/volunteer_report_template.xml',
+        'views/cooperative_web_templates.xml',
+        
         
         ],
     'demo':  [
