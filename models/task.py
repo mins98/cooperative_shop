@@ -26,7 +26,7 @@ class Task(models.Model):
     
     leader_id=fields.Many2one(comodel_name="res.users", string="Leader of task",ondelete='restrict')
     active = fields.Boolean(string="active", default=True)
-    volunteers_ids = fields.Many2many(comodel_name="res.partner", string="Volunteers in this task")
+    volunteers_ids = fields.Many2many(comodel_name="res.partner", string="Volunteers in this task", relation="tasks_partner_rel")
 
     
     expense_ids = fields.One2many(comodel_name="hr.expense",string="Expense",inverse_name="task_id")

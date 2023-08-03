@@ -40,13 +40,13 @@
                             <tbody>
                                 <t t-foreach="doc.tasks_ids" t-as="task">
                                     <tr>
-                                        <td t-if="task.name" name="th_name">
+                                        <td  name="th_name">
                                             <span t-field="task.name"/>
                                         </td>  
-                                        <td t-if="task.leader_id" name="th_employe">
+                                        <td  name="th_employe">
                                             <span t-field="task.leader_id"/>
                                         </td>
-                                        <td t-if="task.state" name="th_state">
+                                        <td  name="th_state">
                                             <span t-field="task.state"/>
                                         </td>                         
                                     </tr>

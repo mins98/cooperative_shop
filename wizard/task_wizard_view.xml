@@ -4,13 +4,17 @@
     <data>
         <record model="ir.ui.view" id="cooperative_shop_task_wizard_form_view">
             <field name="name">base.view_partner_form</field>
-            <field name="model">res.partner</field>
+            <field name="model">cooperative_shop.task.wizard</field>
             <field name="arch" type="xml">
                 <form string="Add volunter to tasks">
+                   
                     <group>
+                        <field name="volunter_id" readonly="1" ></field>
+                        <field name="volunter_tasks_ids"></field>
                         <field name="tasks_ids"></field>
                     </group>
                     <footer>
+                        <button string="Assign Tasks" type="object" name="assign_tasks_to_contact" class="btn-primary"/>
                         <button special="cancel" string="Cancel"/>
                     </footer>
                 </form>
