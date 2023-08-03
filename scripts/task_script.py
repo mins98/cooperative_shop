@@ -37,10 +37,7 @@ if len(tasks)>0:
         tasks_ids.append(task1['id'])
         models.execute_kw(db, uid, password, 'res.partner', 'write', [[volunter['id']], {'tasks_ids': tasks_ids}])
         
-        volunteers_ids=task1['volunteers_ids']
-        volunteers_ids.append(volunter['id'])
-        models.execute_kw(db, uid, password, 'cooperative_shop.task', 'write', [[task1['id']], {'volunteers_ids': volunteers_ids}])
-        
+   
         print ("Ready")
     else:
         print ("Have tasks")    
